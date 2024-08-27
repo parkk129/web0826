@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열</title>
+</head>
+<body>
+    <script>
+        //배열
+        //:여러개의 값을 하나의 변수에 담는것
+
+        //1.리터럴 
+        //ex const 변수 = [값1, 값2, 값3, ...];
+        //2.new Array()
+        //ex const 변수 = new Array(값1, 값2, 값3, ...);
+
+        //index number : 배열의 색인 번호, 0번 부터 ~
+
+        //배열 생성 + 배열 접근(엑서스)
+
+        //배열 접근 : 변수[번호]
+
+        //배열 접근
+        //변수[번호]
+
+
+    //배열의 속성
+        //length
+    
+    //배열의 메서드
+        //배열.join("문자열") -> 문자열로 결합
+        
+        //배열.push(요소) -> 마지막에 요소 추가
+        //배열.pop() -> 마지막 요소 제거
+        //배열.shift() -> 첫 번째 요소 제거
+        //배열.unshift(요소) -> 첫 번째에 요소 추가
+
+        //배열.concat(배열1, 배열2, ...) -> 배열 병합
+
+        //배열.splice(추가할위치,제거할요소수,[추가할요소1], [추가할요소2], ...) -> 배열 추가 또는 제거
+        //배열.slice(숫자1, 숫자2)
+
+        //map()
+
+
+        const fruit1 = "사과";
+        const fruit2 = "바나나";
+        const fruit3 = "오렌지";
+
+        const fruits = ["사과","바나나","오렌지"]
+
+        fruits.push("포도");
+    
+    //출력
+    console.log(fruits);
+
+    document.write(fruit1 + "<br>");
+    document.write(fruit2 + "<br>");
+    document.write(fruit3 + "<br>");
+    
+    document.write("<hr>");
+    
+    document.write(fruits + "<br>");
+    document.write(fruits[0] + "<br>");
+    document.write(fruits[1] + "<br>");
+    document.write(fruits[2] + "<br>");
+    
+    document.write("<hr>");
+
+    const fruits2 = new Array("apple","banana","orange");
+
+    document.write(fruits2 + "<br>");
+    document.write(fruits2[0] + "<br>");
+    document.write(fruits2[1] + "<br>");
+    document.write(fruits2[2] + "<br>");
+
+    document.write("<hr>");
+
+    const nums = [];
+    nums[0] = 10;
+    nums[1] = 20;
+    nums[2] = 30;
+
+    document.write(nums);
+
+
+    const num3 = [5];
+    const num4 = [5];
+
+    //배열의 메서드
+    //배열.join()
+    </script>
+</body>
+</html>
