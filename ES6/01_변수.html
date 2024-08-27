@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 변수 키워드 var let const
+        // 변수 : 전역변수 , 지역변수
+        //전역변수 : 함수 바깥 / 지역변수 : 함수 내부
+
+        //전역변수
+        var x = 1;
+        let x = 1;
+
+        //호이스팅 : 함수 위에서 호출 (var키워드 또는 선언적 함수일때)
+        fn();
+
+        //블록영역
+        //블록 범위 버전
+        
+        //재선언 및 재할당
+        //let : 재선언 재할당 모두 가능 
+        //var : 재선언 재할당 모두 가능
+        //const : 재선언 재할당 모두 불가능
+        {
+            //지역변수
+            var x;
+            let x;
+            console.log("첫번째 출력" + x);
+        }
+        console.log("두번째 출력" + x);
+        
+        {
+            //지역변수
+            var x = 2;
+            console.log("두번째 함수", x);
+        }
+
+    </script>
+</body>
+</html>
