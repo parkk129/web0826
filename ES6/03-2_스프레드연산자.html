@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수</title>
+</head>
+
+<body>
+    <input type="text" placeholder="당신의 주민번호 7번째 숫자를 입력하세요." value="1">
+    <script>
+        /* 
+            연산자
+                대입(할당)
+                    =, +=, -=, *=, /=, ...
+                증감
+                    ++, --
+                산술
+                    +, -, *, /, %(나머지), **
+                비교
+                    >, <, >=, <=, ==, ===, !=, !==
+                논리
+                    && -> and(그리고)
+                    || -> or(또는)
+                    ! -> not(아니다)
+                삼항
+                    (조건) ? 참 : 거짓
+                스프레드
+                    ...
+                기타
+                    typeof(값) -> 데이터 유형 확인
+
+                제어문
+            1. 조건문 : if~else
+            2. 선택문 : switch ~ case , break , default
+            3. 반복문 : for , for~of , for~in , while , do~while
+            4. continue
+
+            if(조건){
+            조건이 참일 경우의 문장;
+            }
+        */
+    
+    // 숫자의 경우 0,null(비어있는),"",false,undefined,NaN 만 거짓이다
+    //키워드는 대소문자를 구별한다
+
+    //출력방법
+    //window.alert()
+    //document.write()
+    //console.log()
+    //window.confirm()
+
+    //데이터 입력방법
+    //<input>
+    //window.prompt()
+
+    const age = window.prompt("당신의 나이를 입력하세요");
+
+    if (age>=20 && age<30){
+        console.log("참이다");
+    } else{
+        console.log("거짓이다");
+    }
+    
+    const week = ["일","월","화","수","목","금","토"];
+
+    // || 여러 조건 중 1개 이상이 참일 경우 true
+    // 주말 토요일 또는 일요일 둘중 하나일 경우 참
+    // == 데이터 값이 같으면 참
+    // === 데이터 값과 유형이 모두 같아야 참
+    if (week[6] ==="토" || week==="일"){
+        console.log("참이다");
+    } else{
+        console.log("거짓이다");
+    }
+
+    //요소찾기
+    const inputElement = document.queryselector("input");
+
+    const genderNum = inputElement.getAttribute(value);
+
+    console.log(genderNum);
+
+    
+    </script>
+</body>
+
+</html>
