@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //구조분해
+        //언제 사용하나? 함수가 배열을 반환하는 경우에 사용한다
+        const vehicles = ['제네시스', '트럭', '싼타페'];
+
+        // 이전 방법
+        const car1 = vehicles[0];
+        const truck1 = vehicles[1];
+        const suv1 = vehicles[2];
+
+        console.log("car1:", car1);
+        console.log("truck1:", truck1);
+        console.log("suv1:", suv1);
+
+        //변수(변수 이름)를 배열로 하는것 >> "구조분해"
+        const [car2, truck2, suv2] = vehicles;
+        const [car3, , suv3] = vehicles;
+
+        //계산기
+
+        function calculate(a, b) {
+            const add = a + b;
+            const subtract = a - b;
+            const multiply = a * b;
+            const divide = a / b;
+
+            return [add, subtract, multiply, divide];
+        }
+
+        //위의 함수 호출 calculate(4,7)
+        const [add, subtract, multiply, divide] = calculate(4, 7);
+
+        //구조분해 사용 전
+        const vehicleOne = {
+            brand: 'Ford',
+            model: 'Mustang',
+            type: 'car',
+            year: 2021,
+            color: 'red'
+        }
+
+        myVehicle(vehicleOne);
+
+        // old way
+        function myVehicle(vehicle) {
+            const message = 'My ' + vehicle.type + ' is a ' + vehicle.color + ' ' + vehicle.brand + ' ' + vehicle.model + '.';
+        }
+
+        //구조분해 사용
+        //객체 안의 객체를 구조분해!
+        const vehicleTwo = {
+            brand: 'Ford',
+            model: 'Mustang',
+            type: 'car',
+            year: 2021,
+            color: 'red'
+        }
+
+        myVehicle(vehicleTwo);
+
+        //배열이 변수명으로 사용됨!!!
+        function myVehicle({ type, color, brand, model }) {
+            const message = 'My ' + type + ' is a ' + color + ' ' + brand + ' ' + model + '.';
+        }
+
+    </script>
+</body>
+
+</html>

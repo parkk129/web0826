@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        img{
+            width: 200px;
+        }
+    </style>
 </head>
 <body>
     <script>
@@ -38,17 +43,21 @@
 
         //"객체" 생성
         const person1 = {
-            "이미지":"https://img.megabox.co.kr/SharedImg/2024/08/05/EFBCHPPc2JWDbJf3nDBr4mUAksUe1dmG_420.jpg",
+            "이미지":'<img src="https://img.megabox.co.kr/SharedImg/2024/08/05/EFBCHPPc2JWDbJf3nDBr4mUAksUe1dmG_420.jpg">',
             "제목":"룩백",
+            "연령대":"ALL",
             "예매율":"12.6%",
             "개봉일":"2024.09.05",
             "좋아요":"356"
             //마지막은 콤마를 찍지 않는다
         };
 
-        //of > in
+        document.write(`<ul>`);
+            
+        //of >> in
         for(x in person1){
-            document.write(x);
+            console.log(x);
+            document.write(`<li> ${x} : ${person1[x]} </li>`);
         }
 
         document.write("<hr>");
@@ -56,8 +65,42 @@
 
         console.log(person1);
 
-        //내장객체 object date array
-        const person2 = new Object();
+        const mb2 = {};
+        console.log("mb2입니다",mb2);
+        
+        mb2["이미지"] = '<img src="https://img.megabox.co.kr/SharedImg/2024/08/26/OFEIHJBOoUQ2UV1XAxo44BpFMrUBKigc_420.jpg">';
+        mb2["제목"] = "베테랑2";
+        mb2["연령대"] = "ALL";
+        mb2["예매율"] = "예매율 12%";
+        mb2["개봉일"] = "개봉일 2024.09.13";
+        mb2["좋아요"] = " 735";
+
+        document.write(mb2);
+
+        //내장객체 object, date, array
+        //new키워드 생성자 함수
+        const mb1 = new Object({
+            "이미지":'<img src="https://img.megabox.co.kr/SharedImg/2024/08/05/EFBCHPPc2JWDbJf3nDBr4mUAksUe1dmG_420.jpg">',
+            "제목":"룩백",
+            "연령대":"ALL",
+            "예매율":"12.6%",
+            "개봉일":"2024.09.05",
+            "좋아요":"356"
+        });
+
+        console.log("mb1입니다",mb1);
+
+        //new키워드 생성자 함수
+        const mb4 = new Object({
+            "이미지":'<img src="https://img.megabox.co.kr/SharedImg/2024/08/05/EFBCHPPc2JWDbJf3nDBr4mUAksUe1dmG_420.jpg">',
+            "제목":"룩백",
+            "연령대":"ALL",
+            "예매율":"12.6%",
+            "개봉일":"2024.09.05",
+            "좋아요":"356"
+        });
+
+        console.log("mb4입니다",mb4);
 
     </script>
 </body>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const numbersOne = [1, 2, 3];
+        const numbersTwo = [4, 5, 6];
+
+        //[[1,2,3],[4,5,6]]
+        const numbersCombined1 = [numbersOne, numbersTwo];
+
+        //스프레드 연산자를(...) 사용한 경우
+        //[1,2,3,4,5,6]
+        const numbersCombined2 = [...numbersOne, ...numbersTwo];
+
+        console.log(numbersCombined1);
+        console.log(numbersCombined2);
+
+
+        const numbers = [1, 2, 3, 4, 5, 6];
+
+        //구조 분해 안에서 특정값을 스프레드 연산자를 사용함
+        const [one, two, ...rest] = numbers;
+        // one > 1
+        // two > 2
+        // ...rest > 3 4 5 6
+
+        const myVehicle = {
+            brand: 'Ford',
+            model: 'Mustang',
+            color: 'red'
+        }
+
+        const updateMyVehicle = {
+            type: 'car',
+            year: 2021,
+            color: 'yellow'
+        }
+
+        const myUpdatedVehicle = { ...myVehicle, ...updateMyVehicle }
+        console.log(myUpdatedVehicle);
+
+    </script>
+</body>
+
+</html>
