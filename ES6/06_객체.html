@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //객체
+        //1.리터럴 방식 : const 객체 = {속성:값,...}
+        //2.new 생성자 함수 방식
+
+        //"배열"
+        const person = [
+            "요기 베라",
+            "https://i.namu.wiki/i/dpYOYYdqiFPG3XiZcfl6EwsXXX_R9FIhls8m2ZryeGBzkWzDGM9kH9t7RMrNpb80iQaNjgMVaUu_Auoz77Et-G7Xlll0c_csYg2BNhei1NzeUBS-pTcYlcQ-D5YPoJKYOH5F7w_nYoeZSmESNApasw.webp",
+            "1925.05.11",
+            "야구선수",
+            "이 또한 지나가리라"
+        ];
+
+        //배열의 참조는 "배열[색인번호]"로 한다
+        //백틱, 보간법 >> ${표현식}
+        document.write(`${person[0]}가 말한 명언 중 최고의 명언은${person[4]}이다`);
+
+        document.write("<hr>");
+        //백틱 보간법 까지
+
+        //x는 배열의 아이템이다
+        //배열을 쭉 나열해줌
+        for(x of person){
+            document.write(x);
+        }
+
+        document.write("<hr>");
+        //배열 쭉 나열 까지
+
+        //"객체" 생성
+        const person1 = {
+            "이미지":"https://img.megabox.co.kr/SharedImg/2024/08/05/EFBCHPPc2JWDbJf3nDBr4mUAksUe1dmG_420.jpg",
+            "제목":"룩백",
+            "예매율":"12.6%",
+            "개봉일":"2024.09.05",
+            "좋아요":"356"
+            //마지막은 콤마를 찍지 않는다
+        };
+
+        //of > in
+        for(x in person1){
+            document.write(x);
+        }
+
+        document.write("<hr>");
+        //객체 쭉 나열 까지
+
+        console.log(person1);
+
+        //내장객체 object date array
+        const person2 = new Object();
+
+    </script>
+</body>
+</html>
