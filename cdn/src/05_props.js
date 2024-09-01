@@ -39,4 +39,4 @@ root0.render(
     <Car1 brand="싼타페" color="blue" />
     <Car2 brand="쏘나타" color="pink" />
 </div>
-);
+);pm

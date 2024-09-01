@@ -1,0 +1,11 @@
+{
+  "name": "web0826",
+  "version": "1.0.0",
+  "description": "리액트 학습 전용",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

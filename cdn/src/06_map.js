@@ -25,3 +25,4 @@ function Garage() {
 const container = document.getElementsById()
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<Garage />);
+root.render(<Car />);
