@@ -1,17 +1,18 @@
-//App 컴포넌트 형식
-function App(){
-    return( 
-        <div className="container">
-            {cards.map((item)=>{
+// App 컴포넌트
+function App() {
+    return (
+        <ul className="container">
+            {cards.map((item, idx) => (
                 <Card 
-                key={index}
-                mimg={item.cimg} 
-                mtit={item.ctit}
-                mage={item.ctit}
-                mrate={item.ctit}
-                mdate={item.ctit}
-                />;
-            })};
-        </div>
+                    key={idx}
+                    mimg={item.cimg} 
+                    mtit={item.ctit} 
+                    mage={item.cage} 
+                    mrate={item.crate} 
+                    mdate={item.cdate} 
+                    mheart={item.cheart} 
+                />
+            ))}
+        </ul>
     );
 }

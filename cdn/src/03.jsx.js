@@ -8,6 +8,10 @@
 
       1. {표현식}
         - 표현식이란? 변수, 속성, JS표현식(연산 등)
+        (1) 주석
+        (2) CSS 스타일 적용
+            style={JS의객체}
+            style={{속성: 값, 속성:값, ...}}
 
       2. 최상위 요소는 반드시 하나!!!
         - HTML 태그 -> 실제 DOM에 추가 된다.
@@ -55,97 +59,78 @@
 // const myElement1 = (<h2>나는 JSX이다.</h2>);
 const myElement1 = <h2>나는 JSX이다.</h2>;
 
+const container0 = document.querySelectorAll(".item").item(0);
+const root0 = ReactDOM.createRoot(container0);
+root0.render(myElement1);
+
 // 최상위 요소는 반드시 하나!!!
 // JS의 선언적 함수
 function myFunction() {
-    <>
-        <h2>나는 함수 안의 JSX이다.</h2>
-        <p>JSX는 반드시 최상위 부모는 하나!</p>
-    </>;
+    return (
+        <>
+            <h2>나는 함수 안의 JSX이다.</h2>
+            <p>JSX는 반드시 최상위 부모는 하나!</p>
+        </>
+    );
 }
+
+const container1 = document.querySelectorAll(".item").item(1);
+const root1 = ReactDOM.createRoot(container1);
+// JS의 함수는 호출하여 사용할 수 있으나, 가능한 리액트 컴포넌트를 사용한다.
+root1.render(myFunction());
 
 // 리액트의 함수형 컴포넌트
 function MyFunction() {
+    // 내부 스타일 -> 객체를 변수로 선언
+    // 객체 참조는 객체.속성 또는 객체["속성"]
+    // 예) styleObj.width -> "100px"
+    // 예) styleObj.border -> "1px solid tomato"
+    const styleObj = {
+        width: "100px",
+        border: "5px solid tomato",
+        // borderRadius: "15px"
+    };
     return (
+        // 요기는 JS네 하하!
         <React.Fragment>
+            {/* 요기가 드뎌 JSX 영역이구나!!! */}
             <h2>나는 함수 안의 JSX이다.</h2>
             <p>JSX는 반드시 최상위 부모는 하나!</p>
+            {/* class를 className으로 쓴다. */}
+            <p className="tomato">JSX는 반드시 최상위 부모는 하나!</p>
+            {/* 
+              1. 인라인 스타일
+                <태그명 style={{}}>
+                  -> 바깥쪽 {}는 표현식 
+                  -> 안쪽 {}는 객체
+                  -> 객체로 스타일을 지정한다.
+                  -> 속성명은 카멜표기법으로 쓴다.
+                    예) border-radius: "5px" -> 에러
+                    예) "border-radius": "5px"
+                    예) borderRadius: "5px" -> 카멜 표기법
+
+              2. 빈 요소는 />로 닫는다. 
+            */}
+            <img
+                style={{
+                    // 인라인 스타일
+                    borderRadius: "5px",
+                    // 내부 스타일
+                    width: styleObj.width,
+                    border: styleObj.border
+                }}
+                // style={{CSS속성}}
+                // 내부 스타일 방식으로만 표현
+                // style={styleObj}
+                src="https://images.velog.io/images/front/post/394731db-5b9d-42de-9b2f-2757c9b0b2c8/img.png"
+                alt="리액트 로고"
+            />
         </React.Fragment>
     );
 }
 
-function Hello() {
-    // 리턴 뒤에 두 줄 이상의 문장은 ( JSX ); 로 묶고 문장 끝 ; 쓴다.
-    return (
-        // JSX의 태그 끝에는 ; 쓰지 않는다.
-        // return 안의 root 태그는 1개 이어야 한다.
-        <div className="card_list">
-            {/* XML에서 빈 요소는 끝에 <img /> */}
-            <div className="card_img">
-                <img
-                    src="https://img.megabox.co.kr/SharedImg/2024/07/03/QaslTt607PkNH8mPWm6ZUH3UwDx2bHoH_420.jpg"
-                    alt="사랑의 하츄핑"
-                />
-            </div>
-            <div>
-                {/* {{}} -> 바깥쪽 괄호는 표현식 */}
-                {/* {{}} -> 안쪽 객체 괄호 */}
-                {/* 객체로 스타일을 지정한다. */}
-                {/* 속성명은 카멜표기법으로 쓴다. 예) borderRadius 또는 "border-radius" */}
-                <span className="card_age">All</span>
-                {/* class -> className 으로 기록한다.*/}
-                <h3 className="card_tit">사랑의 하츄핑</h3>
-            </div>
-            <div>
-                <span className="card_rate">예매율 1%</span>
-                <span className="card_date">개봉일 2024.08.07</span>
-            </div>
-            <div className="card_btn">
-                <button>487</button>
-                <a href="#">예매</a>
-            </div>
-        </div>
-    );
-}
-
-// function App(){
-//   return (
-//     <div style={{display: "flex"}}>
-//       <Hello />
-//       <Hello />
-//       <Hello />
-//       <Hello />
-//     </div>
-//   );
-// }
-
-/* 
-  ReactDOM.render(요소, 컨테이너); 
-    1. ReactDOM은 가상 DOM을 생성하는 객체
-    2. render()은 요소를 컨테이너에 넣는 메서드
-    3. 요소는 컴포넌트의 리턴 값을 XML의 빈 요소로 쓴다.
-      예) <Hello />
-    4. 컨테이너는 HTML 페이지의 div#root를 말한다.
-*/
-
-// 출력 -> 렌더링
-// ReactDOM.render(<App />, document.querySelector("#root"));
-
-ReactDOM.render(
-    <div style={{ display: "flex" }}>
-        <Hello />
-        <Hello />
-        <Hello />
-        <Hello />
-    </div>,
-    document.querySelector("#root")
-);
-
-// 출력 -> 렌더링
-ReactDOM.render(hi, document.querySelectorAll(".item")[0]);
-
-// HTML DOM 요소 가져오기
-const container = document.querySelectorAll(".item").item(1);
-// 리액트 가상돔 요소 생성
-const root = ReactDOM.createRoot(container);
-root.render(<p>Hello</p>);
+const container2 = document.querySelectorAll(".item").item(2);
+const root2 = ReactDOM.createRoot(container2);
+// 컴포넌트는 XML 빈 요소로 호출한다.
+// 이때 태그의 이름은 컴포넌트 이름으로 한다.
+root2.render(<MyFunction />);
