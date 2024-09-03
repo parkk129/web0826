@@ -23,17 +23,20 @@
     객체.속성 -> 값
 */
 function Car1(props) {
-    return <h2>나는 {props.color} {props.brand}!</h2>;
+    //alert("Car1");
+    return <h2>나는1 {props.color} {props.brand}!</h2>;
 }
 function Car2({ brand, color }) {
-    return <h2>나는 {color} {brand}!</h2>;
+    //alert("Car2");
+    return <h2>나는2 {color} {brand}!</h2>;
 }
 
 function Car3() {
+    //alert("Car3");
     const carInfo = {brand: "페라리", color: "빨강"}
     return (
         <div>
-            <h2>나는 {carInfo.color} {carInfo.brand}!</h2>
+            <h2>나는3 {carInfo.color} {carInfo.brand}!</h2>
             <Car4 info={carInfo} />
         </div>
     );
@@ -41,6 +44,7 @@ function Car3() {
 
 // props는 매개변수로 한 컴포넌트에서 다른 컴포넌트로 데이터를 전달한다.
 function Car4(props) {
+    //alert("Car4");
     /* 
         info={carInfo} -> props
         info={{brand: "페라리", color: "빨강"}} -> props
@@ -59,7 +63,7 @@ function Car4(props) {
         props.info.color -> "빨강"
 
     */
-    return <h2>나는 {props.info.color} {props.info.brand}</h2>;
+    return <h2>나는4 {props.info.color} {props.info.brand}</h2>;
 }
 
 const container0 = document.querySelector("#root");

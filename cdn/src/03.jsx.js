@@ -55,6 +55,8 @@
         따라서 if 조건문 대신 삼항 연산자 사용한다.
 */
 
+
+// 변수
 // JSX는 한 줄 문장의 경우 () 생략 가능!
 // const myElement1 = (<h2>나는 JSX이다.</h2>);
 const myElement1 = <h2>나는 JSX이다.</h2>;
@@ -63,8 +65,11 @@ const container0 = document.querySelectorAll(".item").item(0);
 const root0 = ReactDOM.createRoot(container0);
 root0.render(myElement1);
 
-// 최상위 요소는 반드시 하나!!!
+// ////////////////////////////////////////////////////////
+
 // JS의 선언적 함수
+// 최상위 요소는 반드시 하나!!!
+// 함수명이 소문자로 시작한다
 function myFunction() {
     return (
         <>
@@ -79,7 +84,12 @@ const root1 = ReactDOM.createRoot(container1);
 // JS의 함수는 호출하여 사용할 수 있으나, 가능한 리액트 컴포넌트를 사용한다.
 root1.render(myFunction());
 
+
+// ////////////////////////////////////////////////////////
+
+
 // 리액트의 함수형 컴포넌트
+// 함수명이 대문자로 시작한다
 function MyFunction() {
     // 내부 스타일 -> 객체를 변수로 선언
     // 객체 참조는 객체.속성 또는 객체["속성"]
